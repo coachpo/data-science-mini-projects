@@ -1,14 +1,14 @@
 # Congenial Computing Machine
 
-Lightweight collection of three data-science mini projects, each self-contained with its notebook and small sample datasets. Use this repo to review or rerun experiments without hunting for external assets.
+Notebook-based machine-learning playground with three small, self-contained mini projects. Each folder ships with its dataset so you can open any notebook and run it immediately.
 
-## Structure
-- `mini-project-1/` – Bank Marketing classification (UCI Bank Marketing); data in `bank-additional-full.csv`, notebooks `mini_project_1_*`.
-- `mini-project-2/` – Tweet sentiment analysis (Sentiment140 10% sample); data in `Sentiment140.tenPercent.sample.tweets.tsv`, notebooks `mini_project_2_*`.
-- `mini-project-3/` – Human activity recognition (UCI HAR); data split across `X_train.txt`, `X_test.txt`, `y_train.txt`, `y_test.txt`, `subject_*`, notebooks `mini_project_3_*`.
-- `requirements.txt` – Shared Python dependencies for all notebooks.
+## What's inside
+- `mini-project-1/` — UCI Bank Marketing classification; data in `bank-additional-full.csv`; multiple solution notebooks (`mini_project_1_*`).
+- `mini-project-2/` — Sentiment140 tweet sentiment analysis; 10% sample TSV plus notebooks (`mini_project_2_*`, some use DistilBERT/transformers).
+- `mini-project-3/` — UCI Human Activity Recognition (HAR) time-series classification; dataset split across `X_train.txt`, `X_test.txt`, `y_*`, `subject_*` with accompanying notebooks (`mini_project_3_*`).
+- `requirements.txt` — Shared Python stack: numpy/pandas/scikit-learn, tensorflow/keras + tuner, torch/transformers, nltk, matplotlib/seaborn, wordcloud, emoji, contractions, pyenchant, jupyter.
 
-## Setup
+## Quick start
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
@@ -16,18 +16,26 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## Running notebooks
+## Work with the notebooks
 ```bash
-jupyter notebook  # then open the notebook you want
-# or
+jupyter notebook  # browse and run any mini_project_* notebook
+# or execute headlessly
 jupyter nbconvert --to notebook --execute mini-project-1/mini_project_1_my_submission.ipynb
 ```
 
-## Data notes
-- Datasets are already checked into the repo for convenience; they are small but still excluded from future commits via `.gitignore` patterns for other large/raw data you might add.
-- Keep new outputs (checkpoints, converted notebooks, large logs) out of git; the `.gitignore` is configured accordingly.
+## Repository layout
+```
+mini-project-1/        # Bank marketing classification + CSV
+mini-project-2/        # Tweet sentiment notebooks + Sentiment140 sample TSV
+mini-project-3/        # HAR notebooks + sensor/time-series text files
+requirements.txt       # Common dependencies for all projects
+.gitignore             # Keeps checkpoints, large artifacts, and envs out of git
+```
 
-## Repo conventions
-- Default branch: `main`.
-- Keep notebooks and data per project under their respective `mini-project-*` folder.
-- Use `pip install -r requirements.txt` to stay aligned across projects.
+## Data & outputs
+- Datasets are committed for convenience; no external downloads required.
+- `.gitignore` already excludes checkpoints, converted notebooks, large archives, and virtualenvs—keep new large/raw files out of git.
+
+## Conventions
+- Stay inside each `mini-project-*` folder for notebooks/data for that task.
+- Use the shared `requirements.txt` to keep environments in sync.

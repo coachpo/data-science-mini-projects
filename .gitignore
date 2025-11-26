@@ -1,9 +1,31 @@
-### JupyterNotebooks template
-# gitignore template for Jupyter Notebooks
-# website: http://jupyter.org/
-
+### Repo-specific ignores (data science mini-projects)
+.vscode
+.DS_Store
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+# Large/raw data & outputs
+# *.csv
+# *.tsv
+# *.txt
+*.zip
+*.gz
+*.parquet
+*.feather
+*.h5
+*.model
+*.pkl
+*.joblib
+*.log
+
+# Notebook outputs/cache
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+*.nbconvert.ipynb
+.papermill/
+.cache/
+.mypy_cache/
+.pytest_cache/
 
 # IPython
 profile_default/
@@ -170,4 +192,3 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-
